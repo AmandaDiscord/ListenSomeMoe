@@ -5,6 +5,17 @@ import Constants from "./Constants";
 
 const { OP_CODES, internalEvents } = Constants;
 
+interface publicEvents {
+	trackUpdateRequest: [any];
+	trackUpdate: [import("./Types").Track];
+	queueUpdate: [any];
+	notification: [any];
+	error: [Error];
+	raw: [import("./Types").InboundPacket];
+	unknown: [import("./Types").InboundPacket];
+	disconnected: [boolean];
+}
+
 class ListenSomeMoe extends EventEmitter {
 	public wsURL: string;
 	public heartbeatInterval = 0;
@@ -40,6 +51,25 @@ class ListenSomeMoe extends EventEmitter {
 
 	public get nowPlaying() {
 		return this.tracks[0];
+	}
+
+	public on<E extends keyof publicEvents>(event: E, listener: (...args: publicEvents[E]) => any): this {
+		// @ts-ignore
+		return super.on(event, listener);
+	}
+
+	public once<E extends keyof publicEvents>(event: E, listener: (...args: publicEvents[E]) => any): this {
+		// @ts-ignore
+		return super.once(event, listener);
+	}
+
+	public off<E extends keyof publicEvents>(event: E, listener: (...args: publicEvents[E]) => any): this {
+		// @ts-ignore
+		return super.off(event, listener);
+	}
+
+	public emit<E extends keyof publicEvents>(event: E, ...args: publicEvents[E]): boolean {
+		return super.emit(event, ...args);
 	}
 
 	private _heartbeat() {

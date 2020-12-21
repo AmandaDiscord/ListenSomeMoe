@@ -1,6 +1,16 @@
 /// <reference types="node" />
 import WS from "ws";
 import { EventEmitter } from "events";
+interface publicEvents {
+    trackUpdateRequest: [any];
+    trackUpdate: [import("./Types").Track];
+    queueUpdate: [any];
+    notification: [any];
+    error: [Error];
+    raw: [import("./Types").InboundPacket];
+    unknown: [import("./Types").InboundPacket];
+    disconnected: [boolean];
+}
 declare class ListenSomeMoe extends EventEmitter {
     wsURL: string;
     heartbeatInterval: number;
@@ -72,6 +82,10 @@ declare class ListenSomeMoe extends EventEmitter {
     };
     get lastTrackStartedTimestamp(): Date;
     get nowPlaying(): import("./Types").Track;
+    on<E extends keyof publicEvents>(event: E, listener: (...args: publicEvents[E]) => any): this;
+    once<E extends keyof publicEvents>(event: E, listener: (...args: publicEvents[E]) => any): this;
+    off<E extends keyof publicEvents>(event: E, listener: (...args: publicEvents[E]) => any): this;
+    emit<E extends keyof publicEvents>(event: E, ...args: publicEvents[E]): boolean;
     private _heartbeat;
     private _onWSMessage;
     private _disconnect;

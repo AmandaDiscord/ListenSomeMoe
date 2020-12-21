@@ -1,7 +1,7 @@
 {
   "name": "listensomemoe",
-  "version": "1.0.0",
-  "description": "A listen.moe gateway only JavaScript lib",
+  "version": "1.0.1",
+  "description": "A NodeJS listen.moe gateway only wrapper ",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

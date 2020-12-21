@@ -34,6 +34,18 @@ class ListenSomeMoe extends events_1.EventEmitter {
     get nowPlaying() {
         return this.tracks[0];
     }
+    on(event, listener) {
+        return super.on(event, listener);
+    }
+    once(event, listener) {
+        return super.once(event, listener);
+    }
+    off(event, listener) {
+        return super.off(event, listener);
+    }
+    emit(event, ...args) {
+        return super.emit(event, ...args);
+    }
     _heartbeat() {
         this.lastHeartbeatSend = Date.now();
         return this._send({ op: OP_CODES.HEARTBEAT, d: { message: "owo?" } });
