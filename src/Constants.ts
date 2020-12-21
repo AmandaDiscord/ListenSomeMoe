@@ -23,7 +23,7 @@ export const OP_CODES = {
 	 * Receive
 	 */
 	HEARTBEAT_ACK
-}
+};
 
 export const STREAM_URLS = {
 	JPOP: {
@@ -36,7 +36,7 @@ export const STREAM_URLS = {
 		opus: "https://listen.moe/kpop/opus",
 		mp3: "https://listen.moe/kpop/fallback"
 	}
-}
+};
 
 const TRACK_UPDATE_REQUEST = "trackUpdateRequest" as const;
 const TRACK_UPDATE = "trackUpdate" as const;
@@ -48,6 +48,6 @@ export const internalEvents = {
 	TRACK_UPDATE,
 	QUEUE_UPDATE,
 	NOTIFICATION
-}
+};
 
-export default { baseJPOPGatewayURL, baseKPOPGatewayURL, OP_CODES, STREAM_URLS, internalEvents }
+export default { baseJPOPGatewayURL, baseKPOPGatewayURL, OP_CODES, STREAM_URLS, internalEvents };

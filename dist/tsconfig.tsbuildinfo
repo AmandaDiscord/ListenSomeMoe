@@ -150,7 +150,7 @@
         "signature": "0c9ea8c2028047f39a3f66752682604f543c08be8806258c3d95c93e75a43255"
       },
       "../src/constants.ts": {
-        "version": "d8ad0f4523fda84c08c6f166c0fa28039921c9a96c3e16e811a2a88c2d3cf989",
+        "version": "b4b5fbe0b10c0d19932bad046b494d75734a9e1c5aff06803ed3488cc9040ee2",
         "signature": "2819e10139f4370a2015971337da09cfd6e983f132284328c27adf24a3c21aa7"
       },
       "../src/types.ts": {
@@ -350,7 +350,7 @@
         "signature": "c6e185824cae1ddea6706f4256d4bd499e8e9a37ed10689946c22984d68798c3"
       },
       "../src/index.ts": {
-        "version": "7569b97ae05c7223557d1ceafff00550a37df75361b1def9a28e467dce736e0b",
+        "version": "7324fc1ff99b6f19a71adc2f37e1021260cde863a708aaa920d6c5e620dbd45b",
         "signature": "5541ba02fd6a3c3ab64c04500d7c9acb86c7d34d4ffb97743888e479462c5b57"
       }
     },
@@ -800,7 +800,6 @@
       "../../../../appdata/roaming/npm/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts",
       "../../../../appdata/roaming/npm/node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../../../../appdata/roaming/npm/node_modules/typescript/lib/lib.esnext.bigint.d.ts",
-      "../src/constants.ts",
       "../src/types.ts",
       "../node_modules/@types/node/globals.d.ts",
       "../node_modules/@types/node/async_hooks.d.ts",
@@ -850,6 +849,7 @@
       "../node_modules/@types/node/base.d.ts",
       "../node_modules/@types/node/index.d.ts",
       "../node_modules/@types/ws/index.d.ts",
+      "../src/constants.ts",
       "../src/index.ts"
     ]
   },

@@ -30,8 +30,8 @@ class ListenSomeMoe extends EventEmitter {
 	public lastTrackStartedAt = 0;
 
 	public constructor(wsURL: string, maxTrackCache = 5) {
-		super()
-		this.wsURL = wsURL
+		super();
+		this.wsURL = wsURL;
 		this.maxTrackCache = maxTrackCache;
 
 		this._connect();
@@ -111,7 +111,7 @@ class ListenSomeMoe extends EventEmitter {
 				if (this.tracks.length > this.maxTrackCache) this.tracks.pop();
 				this.emit(internalEvents.TRACK_UPDATE, this.nowPlaying);
 				this.lastTrackStartedAt = Date.now();
-			} else this.emit(internalEvents[data.t], data.d)
+			} else this.emit(internalEvents[data.t], data.d);
 			break;
 
 		case OP_CODES.HEARTBEAT_ACK:
